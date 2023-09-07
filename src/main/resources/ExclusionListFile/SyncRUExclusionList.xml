@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <CommonPartyIDs>
+        <PartyID>6297540286</PartyID>
+        <PartyID>8312988066</PartyID>
+        <PartyID>1204462047</PartyID>
+        <PartyID>1256465597</PartyID>
+        <PartyID>1803631814</PartyID>
+        <PartyID>1963607909</PartyID>
+        <PartyID>2105451148</PartyID>
+        <PartyID>2167101421</PartyID>
+        <PartyID>2859830195</PartyID>
+        <PartyID>3276521967</PartyID>
+        <PartyID>3492888036</PartyID>
+        <PartyID>3547432391</PartyID>
+        <PartyID>3762133988</PartyID>
+        <PartyID>4020227156</PartyID>
+        <PartyID>4100584448</PartyID>
+        <PartyID>5221588238</PartyID>
+        <PartyID>5238635433</PartyID>
+        <PartyID>5246652340</PartyID>
+        <PartyID>5421137496</PartyID>
+        <PartyID>5602836023</PartyID>
+        <PartyID>5706488852</PartyID>
+        <PartyID>5828939262</PartyID>
+        <PartyID>6037483769</PartyID>
+        <PartyID>6410517443</PartyID>
+        <PartyID>6653194744</PartyID>
+        <PartyID>6829607866</PartyID>
+        <PartyID>7366254476</PartyID>
+        <PartyID>7510568504</PartyID>
+        <PartyID>7519388758</PartyID>
+        <PartyID>7826688532</PartyID>
+        <PartyID>7864505664</PartyID>
+        <PartyID>8297640637</PartyID>
+        <PartyID>8699040000</PartyID>
+        <PartyID>8711434863</PartyID>
+        <PartyID>9148140545</PartyID>
+        <PartyID>9639205604</PartyID>
+    </CommonPartyIDs>
+    <Countrys>
+        <Country code="MY">
+<!--            <DefaultPartyID></DefaultPartyID>-->
+            <PartyID>3461718290</PartyID>
+        </Country>
+        <Country code="ZA">
+<!--            <DefaultPartyID></DefaultPartyID>-->
+            <PartyID>7470817535</PartyID>
+            <PartyID>1681025380</PartyID>
+            <PartyID>8767256646</PartyID>
+            <PartyID>4528520562</PartyID>
+            <PartyID>1305368723</PartyID>
+            <PartyID>7723868734</PartyID>
+            <PartyID>2288627573</PartyID>
+            <PartyID>7278649608</PartyID>
+            <PartyID>4587111832</PartyID>
+            <PartyID>7455185126</PartyID>
+        </Country>
+<!--        test case needs to be removed-->
+        <Country code="JP">
+<!--            <DefaultPartyID>7834392875</DefaultPartyID>-->
+            <PartyID>7470817538</PartyID>
+        </Country>
+<!--        needs to be removed-->
+    </Countrys>
+</root>

@@ -1,0 +1,1 @@
+java -Dfile.encoding=UTF-8 -jar target\adaptor.inbound.jar --spring.config.location=file:/F:/udt-adaptor-inbound-properties/application.properties

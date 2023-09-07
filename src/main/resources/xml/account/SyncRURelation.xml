@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><root xmlns:volvo="http://www.udtrucks.com/group/common/1_0" xmlns:md="http://www.udtrucks.com/Customer/5_0">
+<X_UDT_name/>
+<X_UDT_partyID>3121548970</X_UDT_partyID>
+<X_UDT_parmaID/>
+<X_UDT_customerType>
+<Code>C</Code>
+</X_UDT_customerType>
+<x_udt_custmarkt_cust_org>
+<X_UDT_partyID>MDM00000016V8Y</X_UDT_partyID>
+<businessId/>
+</x_udt_custmarkt_cust_org>
+</root>
