@@ -1,0 +1,514 @@
+----------------------------------START FFST------------------------------------
+C:\Users\LloydKoshy\OneDrive - LumenData, Inc\Documents\UD trucks\AdapterApplication\udt-adapter-inbound-multithread-git\FFDC\JMSCC0001.FDC PID:25988
+
+                                    IBM MQ classes for JMS and Java (AllClient packaging) First Failure Symptom Report
+                                            
+
+Product          :- IBM MQ classes for JMS and Java (AllClient packaging)
+Date/Time        :- Thu Sep 21 16:19:27 IST 2023
+System time      :- 1695293367963
+Operating System :- Windows 11
+UserID           :- LloydKoshy
+Java Vendor      :- Amazon.com Inc.
+Java Version     :- 17.0.6+10-LTS
+
+Source Class     :- com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection
+Source Method    :- getNonFipsSocketFactory()
+ProbeID          :- 03
+Thread           :- name=ForkJoinPool.commonPool-worker-1 priority=5 group=main ccl=jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa
+
+                                      Data
+                                      ----
+
+|   Description        :-  Cannot open keystore file
+|   Exception message  :-  E:\udt-adaptor-inbound\src\main\resources\key.jks (The system cannot find the path specified)
+
+                              Version information
+                              -------------------
+
+IBM MQ JMS Provider
+9.1.0.0
+p910-L180705
+Production
+Component Title: IBM MQ JMS Provider
+Component Name:  com.ibm.msg.client.wmq
+Version:         9.1.0.0
+Class Name:      class com.ibm.msg.client.wmq.factories.WMQComponent
+CMVC:            p910-L180705
+mqjbnd level:    p930-L220607.DE
+Jar location:    file:/C:/Users/LloydKoshy/.m2/repository/com/ibm/mq/com.ibm.mq.allclient/9.1.0.0/com.ibm.mq.allclient-9.1.0.0.jar
+Factory Class:   class com.ibm.msg.client.wmq.factories.WMQFactoryFactory
+
+Common Services for Java Platform, Standard Edition
+9.1.0.0
+p910-L180705
+Production
+inPreferenceTo[0]: com.ibm.msg.client.commonservices.j2me
+Component Title:   Common Services for Java Platform, Standard Edition
+Component Name:    com.ibm.msg.client.commonservices.j2se
+Version:           9.1.0.0
+Class Name:        class com.ibm.msg.client.commonservices.j2se.J2SEComponent
+CMVC:              p910-L180705
+Jar location:      file:/C:/Users/LloydKoshy/.m2/repository/com/ibm/mq/com.ibm.mq.allclient/9.1.0.0/com.ibm.mq.allclient-9.1.0.0.jar
+Factory Class:     class com.ibm.msg.client.commonservices.j2se.CommonServicesImplementation
+
+Java Message Service Client
+9.1.0.0
+p910-L180705
+Production
+Component Title: Java Message Service Client
+Component Name:  com.ibm.msg.client.jms
+Version:         9.1.0.0
+Class Name:      class com.ibm.msg.client.jms.internal.JMSComponent
+CMVC:            p910-L180705
+Jar location:    file:/C:/Users/LloydKoshy/.m2/repository/com/ibm/mq/com.ibm.mq.allclient/9.1.0.0/com.ibm.mq.allclient-9.1.0.0.jar
+Factory Class:   null
+
+IBM MQ classes for Java Message Service
+9.1.0.0
+p910-L180705
+Production
+Component Title: IBM MQ classes for Java Message Service
+Component Name:  com.ibm.mq.jms
+Version:         9.1.0.0
+BuiltWith:       IBM Corporation  8.0.5.7 - pxa6480sr5fp7-20171216_01(SR5 FP7) Linux
+Class Name:      class com.ibm.mq.jms.MQJMSComponent
+CMVC:            p910-L180705
+Jar location:    file:/C:/Users/LloydKoshy/.m2/repository/com/ibm/mq/com.ibm.mq.allclient/9.1.0.0/com.ibm.mq.allclient-9.1.0.0.jar
+Factory Class:   null
+
+IBM MQ classes for Java
+9.1.0.0
+p910-L180705
+Production
+Component Title: IBM MQ classes for Java
+Component Name:  com.ibm.mq
+Version:         9.1.0.0
+BasedOn:         
+Class Name:      class com.ibm.mq.MQJavaComponent
+CMVC:            p910-L180705
+Jar location:    file:/C:/Users/LloydKoshy/.m2/repository/com/ibm/mq/com.ibm.mq.allclient/9.1.0.0/com.ibm.mq.allclient-9.1.0.0.jar
+APARs:           
+title:           
+Factory Class:   null
+
+
+
+                                  Stack trace
+                                  -----------
+
+Stack trace to show the location of the FFST call
+|   FFST Location  :-  java.lang.Exception
+|   	at com.ibm.msg.client.commonservices.trace.Trace.getCurrentPosition(Trace.java:2144)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.createFFSTString(Trace.java:2051)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.ffstInternal(Trace.java:1933)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.ffst(Trace.java:1734)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.getNonFipsSocketFactory(RemoteTCPConnection.java:2504)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.chooseSocketFactory(RemoteTCPConnection.java:2287)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.makeSocketSecure(RemoteTCPConnection.java:2005)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.connnectUsingLocalAddress(RemoteTCPConnection.java:870)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.protocolConnect(RemoteTCPConnection.java:1294)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteConnection.connect(RemoteConnection.java:1011)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getSessionFromNewConnection(RemoteConnectionSpecification.java:416)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getSession(RemoteConnectionSpecification.java:312)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteConnectionPool.getSession(RemoteConnectionPool.java:155)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1749)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1273)
+|   	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiConnect(InterceptedJmqiImpl.java:377)
+|   	at com.ibm.mq.ese.jmqi.ESEJMQI.jmqiConnect(ESEJMQI.java:562)
+|   	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:357)
+|   	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createV7ProviderConnection(WMQConnectionFactory.java:8475)
+|   	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createProviderConnection(WMQConnectionFactory.java:7815)
+|   	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl._createConnection(JmsConnectionFactoryImpl.java:303)
+|   	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl.createConnection(JmsConnectionFactoryImpl.java:236)
+|   	at com.ibm.mq.jms.MQConnectionFactory.createCommonConnection(MQConnectionFactory.java:6016)
+|   	at com.ibm.mq.jms.MQConnectionFactory.createConnection(MQConnectionFactory.java:6065)
+|   	at com.udtrucks.adaptor.services.queue.QueueWorkflowService.getMessageListFromMQ(QueueWorkflowService.java:98)
+|   	at com.udtrucks.adaptor.services.queue.QueueWorkflowService$$FastClassBySpringCGLIB$$7d5a084b.invoke(<generated>)
+|   	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+|   	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+|   	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+|   	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+|   	at org.springframework.retry.annotation.AnnotationAwareRetryOperationsInterceptor.invoke(AnnotationAwareRetryOperationsInterceptor.java:166)
+|   	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+|   	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+|   	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+|   	at com.udtrucks.adaptor.services.queue.QueueWorkflowService$$EnhancerBySpringCGLIB$$106096fd.getMessageListFromMQ(<generated>)
+|   	at com.udtrucks.adaptor.QueueController.startCustomer(QueueController.java:109)
+|   	at com.udtrucks.adaptor.services.QueueService.lambda$pollFromQueues$0(QueueService.java:31)
+|   	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+|   	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+|   	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+|   	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+|   	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+|   	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+|   	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+|   
+
+                            Property Store Contents
+                            -----------------------
+
+All currently set properties
+|   CONSOLE_LOG_CHARSET                  :-  UTF-8
+|   FILE_LOG_CHARSET                     :-  UTF-8
+|   PID                                  :-  25988
+|   catalina.base                        :-  C:\Users\LloydKoshy\AppData\Local\Temp\tomcat.8080.1173493065499064411
+|   catalina.home                        :-  C:\Users\LloydKoshy\AppData\Local\Temp\tomcat.8080.1173493065499064411
+|   catalina.useNaming                   :-  false
+|   com.ibm.mq.cfg.useIBMCipherMappings  :-  false
+|   file.encoding                        :-  UTF-8
+|   file.separator                       :-  \
+|   java.awt.headless                    :-  true
+|   java.class.path                      :-  C:\Users\LloydKoshy\OneDrive - LumenData, Inc\Documents\UD trucks\AdapterApplication\udt-adapter-inbound-multithread-git\target\classes;C:\Users\LloydKoshy\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.5.12\spring-boot-starter-web-2.5.12.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\boot\spring-boot-starter\2.5.12\spring-boot-starter-2.5.12.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.5.12\spring-boot-starter-logging-2.5.12.jar;C:\Users\LloydKoshy\.m2\repository\ch\qos\logback\logback-classic\1.2.11\logback-classic-1.2.11.jar;C:\Users\LloydKoshy\.m2\repository\ch\qos\logback\logback-core\1.2.11\logback-core-1.2.11.jar;C:\Users\LloydKoshy\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.17.2\log4j-to-slf4j-2.17.2.jar;C:\Users\LloydKoshy\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.2\log4j-api-2.17.2.jar;C:\Users\LloydKoshy\.m2\repository\org\slf4j\jul-to-slf4j\1.7.36\jul-to-slf4j-1.7.36.jar;C:\Users\LloydKoshy\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar;C:\Users\LloydKoshy\.m2\repository\org\yaml\snakeyaml\1.28\snakeyaml-1.28.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.5.12\spring-boot-starter-json-2.5.12.jar;C:\Users\LloydKoshy\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.12.6\jackson-datatype-jdk8-2.12.6.jar;C:\Users\LloydKoshy\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.12.6\jackson-datatype-jsr310-2.12.6.jar;C:\Users\LloydKoshy\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.12.6\jackson-module-parameter-names-2.12.6.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.5.12\spring-boot-starter-tomcat-2.5.12.jar;C:\Users\LloydKoshy\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\9.0.60\tomcat-embed-core-9.0.60.jar;C:\Users\LloydKoshy\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\9.0.60\tomcat-embed-el-9.0.60.jar;C:\Users\LloydKoshy\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\9.0.60\tomcat-embed-websocket-9.0.60.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-web\5.3.18\spring-web-5.3.18.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-webmvc\5.3.18\spring-webmvc-5.3.18.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-aop\5.3.18\spring-aop-5.3.18.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-expression\5.3.18\spring-expression-5.3.18.jar;C:\Users\LloydKoshy\.m2\repository\com\ibm\mq\mq-jms-spring-boot-starter\2.0.9\mq-jms-spring-boot-starter-2.0.9.jar;C:\Users\LloydKoshy\.m2\repository\com\ibm\mq\com.ibm.mq.allclient\9.1.0.0\com.ibm.mq.allclient-9.1.0.0.jar;C:\Users\LloydKoshy\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.59\bcprov-jdk15on-1.59.jar;C:\Users\LloydKoshy\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.59\bcpkix-jdk15on-1.59.jar;C:\Users\LloydKoshy\.m2\repository\javax\jms\javax.jms-api\2.0.1\javax.jms-api-2.0.1.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-core\5.3.18\spring-core-5.3.18.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-jcl\5.3.18\spring-jcl-5.3.18.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-context\5.3.18\spring-context-5.3.18.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-beans\5.3.18\spring-beans-5.3.18.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-jms\5.3.18\spring-jms-5.3.18.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-messaging\5.3.18\spring-messaging-5.3.18.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-tx\5.3.18\spring-tx-5.3.18.jar;C:\Users\LloydKoshy\.m2\repository\org\messaginghub\pooled-jms\1.2.3\pooled-jms-1.2.3.jar;C:\Users\LloydKoshy\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\LloydKoshy\.m2\repository\org\apache\geronimo\specs\geronimo-jms_2.0_spec\1.0-alpha-2\geronimo-jms_2.0_spec-1.0-alpha-2.jar;C:\Users\LloydKoshy\.m2\repository\org\apache\commons\commons-pool2\2.9.0\commons-pool2-2.9.0.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\boot\spring-boot\2.5.12\spring-boot-2.5.12.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.5.12\spring-boot-autoconfigure-2.5.12.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\boot\spring-boot-configuration-processor\2.5.12\spring-boot-configuration-processor-2.5.12.jar;C:\Users\LloydKoshy\.m2\repository\org\udt\commons\1.0\commons-1.0.jar;C:\Users\LloydKoshy\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\LloydKoshy\.m2\repository\com\sun\xml\bind\jaxb-core\2.2.11\jaxb-core-2.2.11.jar;C:\Users\LloydKoshy\.m2\repository\org\json\json\20230227\json-20230227.jar;C:\Users\LloydKoshy\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-xml\2.12.6\jackson-dataformat-xml-2.12.6.jar;C:\Users\LloydKoshy\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.6\jackson-core-2.12.6.jar;C:\Users\LloydKoshy\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.6\jackson-annotations-2.12.6.jar;C:\Users\LloydKoshy\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.6.1\jackson-databind-2.12.6.1.jar;C:\Users\LloydKoshy\.m2\repository\com\fasterxml\jackson\module\jackson-module-jaxb-annotations\2.12.6\jackson-module-jaxb-annotations-2.12.6.jar;C:\Users\LloydKoshy\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\Users\LloydKoshy\.m2\repository\org\codehaus\woodstox\stax2-api\4.2.1\stax2-api-4.2.1.jar;C:\Users\LloydKoshy\.m2\repository\com\fasterxml\woodstox\woodstox-core\6.2.4\woodstox-core-6.2.4.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\azure-storage-blob\12.20.0\azure-storage-blob-12.20.0.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\azure-core\1.34.0\azure-core-1.34.0.jar;C:\Users\LloydKoshy\.m2\repository\io\projectreactor\reactor-core\3.4.16\reactor-core-3.4.16.jar;C:\Users\LloydKoshy\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\azure-core-http-netty\1.12.7\azure-core-http-netty-1.12.7.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-handler\4.1.75.Final\netty-handler-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-common\4.1.75.Final\netty-common-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-resolver\4.1.75.Final\netty-resolver-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-transport\4.1.75.Final\netty-transport-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-codec\4.1.75.Final\netty-codec-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-handler-proxy\4.1.75.Final\netty-handler-proxy-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-codec-socks\4.1.75.Final\netty-codec-socks-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-buffer\4.1.75.Final\netty-buffer-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-codec-http\4.1.75.Final\netty-codec-http-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-codec-http2\4.1.75.Final\netty-codec-http2-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.75.Final\netty-transport-native-unix-common-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-transport-native-epoll\4.1.75.Final\netty-transport-native-epoll-4.1.75.Final-linux-x86_64.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.75.Final\netty-transport-classes-epoll-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.75.Final\netty-transport-native-kqueue-4.1.75.Final-osx-x86_64.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.75.Final\netty-transport-classes-kqueue-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.51.Final\netty-tcnative-boringssl-static-2.0.51.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-tcnative-classes\2.0.51.Final\netty-tcnative-classes-2.0.51.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.51.Final\netty-tcnative-boringssl-static-2.0.51.Final-linux-x86_64.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.51.Final\netty-tcnative-boringssl-static-2.0.51.Final-linux-aarch_64.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.51.Final\netty-tcnative-boringssl-static-2.0.51.Final-osx-x86_64.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.51.Final\netty-tcnative-boringssl-static-2.0.51.Final-osx-aarch_64.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.51.Final\netty-tcnative-boringssl-static-2.0.51.Final-windows-x86_64.jar;C:\Users\LloydKoshy\.m2\repository\io\projectreactor\netty\reactor-netty-http\1.0.17\reactor-netty-http-1.0.17.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-resolver-dns\4.1.75.Final\netty-resolver-dns-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-codec-dns\4.1.75.Final\netty-codec-dns-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.75.Final\netty-resolver-dns-native-macos-4.1.75.Final-osx-x86_64.jar;C:\Users\LloydKoshy\.m2\repository\io\netty\netty-resolver-dns-classes-macos\4.1.75.Final\netty-resolver-dns-classes-macos-4.1.75.Final.jar;C:\Users\LloydKoshy\.m2\repository\io\projectreactor\netty\reactor-netty-core\1.0.17\reactor-netty-core-1.0.17.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\azure-storage-common\12.19.1\azure-storage-common-12.19.1.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\azure-storage-internal-avro\12.5.1\azure-storage-internal-avro-12.5.1.jar;C:\Users\LloydKoshy\.m2\repository\org\projectlombok\lombok\1.18.22\lombok-1.18.22.jar;C:\Users\LloydKoshy\.m2\repository\net\minidev\json-smart\2.4.8\json-smart-2.4.8.jar;C:\Users\LloydKoshy\.m2\repository\net\minidev\accessors-smart\2.4.8\accessors-smart-2.4.8.jar;C:\Users\LloydKoshy\.m2\repository\org\ow2\asm\asm\9.1\asm-9.1.jar;C:\Users\LloydKoshy\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\retry\spring-retry\1.3.2\spring-retry-1.3.2.jar;C:\Users\LloydKoshy\.m2\repository\org\springframework\spring-aspects\5.2.8.RELEASE\spring-aspects-5.2.8.RELEASE.jar;C:\Users\LloydKoshy\.m2\repository\org\aspectj\aspectjweaver\1.9.7\aspectjweaver-1.9.7.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\spring\spring-cloud-azure-starter-storage\4.5.0\spring-cloud-azure-starter-storage-4.5.0.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\spring\spring-cloud-azure-starter-storage-file-share\4.5.0\spring-cloud-azure-starter-storage-file-share-4.5.0.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\azure-storage-file-share\12.16.1\azure-storage-file-share-12.16.1.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\spring\spring-cloud-azure-starter-storage-queue\4.5.0\spring-cloud-azure-starter-storage-queue-4.5.0.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\azure-storage-queue\12.15.1\azure-storage-queue-12.15.1.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\spring\spring-cloud-azure-starter-storage-blob\4.5.0\spring-cloud-azure-starter-storage-blob-4.5.0.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\spring\spring-cloud-azure-starter\4.5.0\spring-cloud-azure-starter-4.5.0.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\spring\spring-cloud-azure-autoconfigure\4.5.0\spring-cloud-azure-autoconfigure-4.5.0.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\spring\spring-cloud-azure-service\4.5.0\spring-cloud-azure-service-4.5.0.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\spring\spring-cloud-azure-core\4.5.0\spring-cloud-azure-core-4.5.0.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\azure-identity\1.7.1\azure-identity-1.7.1.jar;C:\Users\LloydKoshy\.m2\repository\com\microsoft\azure\msal4j\1.13.3\msal4j-1.13.3.jar;C:\Users\LloydKoshy\.m2\repository\com\nimbusds\oauth2-oidc-sdk\9.9.1\oauth2-oidc-sdk-9.9.1.jar;C:\Users\LloydKoshy\.m2\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;C:\Users\LloydKoshy\.m2\repository\com\nimbusds\content-type\2.1\content-type-2.1.jar;C:\Users\LloydKoshy\.m2\repository\com\nimbusds\lang-tag\1.5\lang-tag-1.5.jar;C:\Users\LloydKoshy\.m2\repository\com\nimbusds\nimbus-jose-jwt\9.10.1\nimbus-jose-jwt-9.10.1.jar;C:\Users\LloydKoshy\.m2\repository\com\microsoft\azure\msal4j-persistence-extension\1.1.0\msal4j-persistence-extension-1.1.0.jar;C:\Users\LloydKoshy\.m2\repository\net\java\dev\jna\jna\5.5.0\jna-5.5.0.jar;C:\Users\LloydKoshy\.m2\repository\net\java\dev\jna\jna-platform\5.6.0\jna-platform-5.6.0.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\azure-core-amqp\2.8.0\azure-core-amqp-2.8.0.jar;C:\Users\LloydKoshy\.m2\repository\com\microsoft\azure\qpid-proton-j-extensions\1.2.4\qpid-proton-j-extensions-1.2.4.jar;C:\Users\LloydKoshy\.m2\repository\org\apache\qpid\proton-j\0.33.8\proton-j-0.33.8.jar;C:\Users\LloydKoshy\.m2\repository\com\azure\azure-core-management\1.9.0\azure-core-management-1.9.0.jar;C:\Users\LloydKoshy\.m2\repository\jakarta\validation\jakarta.validation-api\2.0.2\jakarta.validation-api-2.0.2.jar;C:\Users\LloydKoshy\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\LloydKoshy\.m2\repository\commons-fileupload\commons-fileupload\1.3.1\commons-fileupload-1.3.1.jar;C:\Users\LloydKoshy\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\LloydKoshy\.m2\repository\org\apache\httpcomponents\httpcore\4.4.15\httpcore-4.4.15.jar;C:\Users\LloydKoshy\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\LloydKoshy\.m2\repository\com\sun\mail\javax.mail\1.6.2\javax.mail-1.6.2.jar;C:\Users\LloydKoshy\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar
+|   java.class.version                   :-  61.0
+|   java.home                            :-  C:\Users\LloydKoshy\.jdks\corretto-17.0.6
+|   java.io.tmpdir                       :-  C:\Users\LLOYDK~1\AppData\Local\Temp\
+|   java.library.path                    :-  C:\Users\LloydKoshy\.jdks\corretto-17.0.6\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\IBM\MQ\java\lib;C:\Program Files\IBM\MQ\java\lib64;C:\app\Oracle\Products\orcl_193000_db_home\bin;D:\app\oracle\product\21c\dbhomeXE\bin;C:\app\oracle\product\21c\dbhomeXE\bin;C:\Program Files\Zulu\zulu-8\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\PuTTY\;C:\Program Files\IBM\MQ\bin64;C:\Program Files\IBM\MQ\bin;C:\Program Files\IBM\MQ\tools\c\samples\bin64;C:\Program Files\IBM\MQ\tools\c\samples\bin;C:\Program Files\Git\cmd;C:\Lloyd_Tools\apache-maven-3.8.8\bin\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\LloydKoshy\AppData\Local\Microsoft\WindowsApps;C:\Users\LloydKoshy\AppData\Local\Programs\Microsoft VS Code\bin;C:\Lloyd_Tools\apache-maven-3.8.8\bin;;.
+|   java.runtime.name                    :-  OpenJDK Runtime Environment
+|   java.runtime.version                 :-  17.0.6+10-LTS
+|   java.specification.name              :-  Java Platform API Specification
+|   java.specification.vendor            :-  Oracle Corporation
+|   java.specification.version           :-  17
+|   java.vendor                          :-  Amazon.com Inc.
+|   java.vendor.url                      :-  https://aws.amazon.com/corretto/
+|   java.vendor.url.bug                  :-  https://github.com/corretto/corretto-17/issues/
+|   java.vendor.version                  :-  Corretto-17.0.6.10.1
+|   java.version                         :-  17.0.6
+|   java.version.date                    :-  2023-01-17
+|   java.vm.compressedOopsMode           :-  Zero based
+|   java.vm.info                         :-  mixed mode, sharing
+|   java.vm.name                         :-  OpenJDK 64-Bit Server VM
+|   java.vm.specification.name           :-  Java Virtual Machine Specification
+|   java.vm.specification.vendor         :-  Oracle Corporation
+|   java.vm.specification.version        :-  17
+|   java.vm.vendor                       :-  Amazon.com Inc.
+|   java.vm.version                      :-  17.0.6+10-LTS
+|   javax.net.ssl.keyStore               :-  E:\udt-adaptor-inbound\src\main\resources\key.jks
+|   javax.net.ssl.keyStorePassword       :-  udtmds
+|   javax.net.ssl.trustStore             :-  E:\udt-adaptor-inbound\src\main\resources\key.jks
+|   javax.net.ssl.trustStorePassword     :-  udtmds
+|   jdk.debug                            :-  release
+|   line.separator                       :-  
+|   
+|   native.encoding                      :-  Cp1252
+|   os.arch                              :-  amd64
+|   os.name                              :-  Windows 11
+|   os.version                           :-  10.0
+|   path.separator                       :-  ;
+|   spring.beaninfo.ignore               :-  true
+|   sun.arch.data.model                  :-  64
+|   sun.boot.library.path                :-  C:\Users\LloydKoshy\.jdks\corretto-17.0.6\bin
+|   sun.cpu.endian                       :-  little
+|   sun.cpu.isalist                      :-  amd64
+|   sun.io.unicode.encoding              :-  UnicodeLittle
+|   sun.java.command                     :-  com.udtrucks.adaptor.AdaptorInboundApplication
+|   sun.java.launcher                    :-  SUN_STANDARD
+|   sun.jnu.encoding                     :-  Cp1252
+|   sun.management.compiler              :-  HotSpot 64-Bit Tiered Compilers
+|   sun.os.patch.level                   :-  
+|   user.country                         :-  IN
+|   user.dir                             :-  C:\Users\LloydKoshy\OneDrive - LumenData, Inc\Documents\UD trucks\AdapterApplication\udt-adapter-inbound-multithread-git
+|   user.home                            :-  C:\Users\LloydKoshy
+|   user.language                        :-  en
+|   user.name                            :-  LloydKoshy
+|   user.script                          :-  
+|   user.timezone                        :-  Asia/Calcutta
+|   user.variant                         :-  
+
+                           WorkQueueMananger Contents
+                           --------------------------
+
+|   Current ThreadPool size      :-  0
+|   Maintain ThreadPool size     :-  false
+|   Maximum ThreadPool size      :-  -1
+|   ThreadPool inactive timeout  :-  0
+
+                               Runtime properties
+                               ------------------
+
+|   Available processors         :-  8
+|   Free memory in bytes (now)   :-  50022376
+|   Max memory in bytes          :-  4225761280
+|   Total memory in bytes (now)  :-  92274688
+
+                           Component Manager Contents
+                           --------------------------
+
+Common Services Components:
+|   CMVC               :-  p910-L180705
+|   Class Name         :-  class com.ibm.msg.client.commonservices.j2se.J2SEComponent
+|   Component Name     :-  com.ibm.msg.client.commonservices.j2se
+|   Component Title    :-  Common Services for Java Platform, Standard Edition
+|   Factory Class      :-  class com.ibm.msg.client.commonservices.j2se.CommonServicesImplementation
+|   Jar location       :-  file:/C:/Users/LloydKoshy/.m2/repository/com/ibm/mq/com.ibm.mq.allclient/9.1.0.0/com.ibm.mq.allclient-9.1.0.0.jar
+|   Version            :-  9.1.0.0
+|   inPreferenceTo[0]  :-  com.ibm.msg.client.commonservices.j2me
+
+Messaging Provider Components:
+|   CMVC             :-  p910-L180705
+|   Class Name       :-  class com.ibm.msg.client.wmq.factories.WMQComponent
+|   Component Name   :-  com.ibm.msg.client.wmq
+|   Component Title  :-  IBM MQ JMS Provider
+|   Factory Class    :-  class com.ibm.msg.client.wmq.factories.WMQFactoryFactory
+|   Jar location     :-  file:/C:/Users/LloydKoshy/.m2/repository/com/ibm/mq/com.ibm.mq.allclient/9.1.0.0/com.ibm.mq.allclient-9.1.0.0.jar
+|   Version          :-  9.1.0.0
+|   mqjbnd level     :-  p930-L220607.DE
+
+
+
+
+                         Provider Specific Information
+                         -----------------------------
+
+Overview of JMS System
+Num. Contexts    : 0
+Num. Connections : 0
+Num. Sessions    : 0
+Num. Consumers   : 0
+Num. Producers   : 0
+
+Detailed JMS System Information
+Contexts      : 
+Connections      : 
+Sessions         : 
+Consumers        : 
+Producers        : 
+
+All Thread Information
+
+                          Name : Catalina-utility-1
+                      Priority : 1
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 20
+                         State : WAITING
+                         Stack : jdk.internal.misc.Unsafe.park(Unsafe.java:-2)
+                               : java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:506)
+                               : java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3463)
+                               : java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3434)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1623)
+                               : java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1177)
+                               : java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+                               : java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+                               : java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+                               : java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+                               : org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+                               : java.lang.Thread.run(Thread.java:833)
+
+                          Name : Reference Handler
+                      Priority : 10
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 2
+                         State : RUNNABLE
+                         Stack : java.lang.ref.Reference.waitForReferencePendingList(Reference.java:-2)
+                               : java.lang.ref.Reference.processPendingReferences(Reference.java:253)
+                               : java.lang.ref.Reference$ReferenceHandler.run(Reference.java:215)
+
+                          Name : Common-Cleaner
+                      Priority : 8
+                   ThreadGroup : java.lang.ThreadGroup[name=InnocuousThreadGroup,maxpri=10]
+                            ID : 13
+                         State : TIMED_WAITING
+                         Stack : java.lang.Object.wait(Object.java:-2)
+                               : java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+                               : jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+                               : java.lang.Thread.run(Thread.java:833)
+                               : jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:162)
+
+                          Name : Keep-Alive-Timer
+                      Priority : 8
+                   ThreadGroup : java.lang.ThreadGroup[name=InnocuousThreadGroup,maxpri=10]
+                            ID : 24
+                         State : TIMED_WAITING
+                         Stack : java.lang.Thread.sleep(Thread.java:-2)
+                               : sun.net.www.http.KeepAliveCache.run(KeepAliveCache.java:243)
+                               : java.lang.Thread.run(Thread.java:833)
+                               : jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:162)
+
+                          Name : ForkJoinPool.commonPool-worker-1
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 25
+                         State : RUNNABLE
+                         Stack : java.lang.Thread.dumpThreads(Thread.java:-2)
+                               : java.lang.Thread.getAllStackTraces(Thread.java:1662)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.generateThreadInfo(DefaultTracer.java:1194)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.access$1200(DefaultTracer.java:148)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer$8.run(DefaultTracer.java:1134)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer$8.run(DefaultTracer.java:1058)
+                               : java.security.AccessController.executePrivileged(AccessController.java:776)
+                               : java.security.AccessController.doPrivileged(AccessController.java:318)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.ffst(DefaultTracer.java:1058)
+                               : com.ibm.msg.client.commonservices.j2se.wmqsupport.TracerImpl.ffst(TracerImpl.java:174)
+                               : com.ibm.msg.client.commonservices.trace.Trace.ffstInternal(Trace.java:1938)
+                               : com.ibm.msg.client.commonservices.trace.Trace.ffst(Trace.java:1734)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.getNonFipsSocketFactory(RemoteTCPConnection.java:2504)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.chooseSocketFactory(RemoteTCPConnection.java:2287)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.makeSocketSecure(RemoteTCPConnection.java:2005)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.connnectUsingLocalAddress(RemoteTCPConnection.java:870)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.protocolConnect(RemoteTCPConnection.java:1294)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteConnection.connect(RemoteConnection.java:1011)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getSessionFromNewConnection(RemoteConnectionSpecification.java:416)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getSession(RemoteConnectionSpecification.java:312)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteConnectionPool.getSession(RemoteConnectionPool.java:155)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1749)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1273)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiConnect(InterceptedJmqiImpl.java:377)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.jmqiConnect(ESEJMQI.java:562)
+                               : com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:357)
+                               : com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createV7ProviderConnection(WMQConnectionFactory.java:8475)
+                               : com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createProviderConnection(WMQConnectionFactory.java:7815)
+                               : com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl._createConnection(JmsConnectionFactoryImpl.java:303)
+                               : com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl.createConnection(JmsConnectionFactoryImpl.java:236)
+                               : com.ibm.mq.jms.MQConnectionFactory.createCommonConnection(MQConnectionFactory.java:6016)
+                               : com.ibm.mq.jms.MQConnectionFactory.createConnection(MQConnectionFactory.java:6065)
+                               : com.udtrucks.adaptor.services.queue.QueueWorkflowService.getMessageListFromMQ(QueueWorkflowService.java:98)
+                               : com.udtrucks.adaptor.services.queue.QueueWorkflowService$$FastClassBySpringCGLIB$$7d5a084b.invoke(<generated>:-1)
+                               : org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+                               : org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+                               : org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+                               : org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+                               : org.springframework.retry.annotation.AnnotationAwareRetryOperationsInterceptor.invoke(AnnotationAwareRetryOperationsInterceptor.java:166)
+                               : org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+                               : org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+                               : org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+                               : com.udtrucks.adaptor.services.queue.QueueWorkflowService$$EnhancerBySpringCGLIB$$106096fd.getMessageListFromMQ(<generated>:-1)
+                               : com.udtrucks.adaptor.QueueController.startCustomer(QueueController.java:109)
+                               : com.udtrucks.adaptor.services.QueueService.lambda$pollFromQueues$0(QueueService.java:31)
+                               : com.udtrucks.adaptor.services.QueueService$$Lambda$609/0x0000000801016508.get(null:-1)
+                               : java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+                               : java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+                               : java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+                               : java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+                               : java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+                               : java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+                               : java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+
+                          Name : main
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 1
+                         State : WAITING
+                         Stack : jdk.internal.misc.Unsafe.park(Unsafe.java:-2)
+                               : java.util.concurrent.locks.LockSupport.park(LockSupport.java:211)
+                               : java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1864)
+                               : java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3463)
+                               : java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3434)
+                               : java.util.concurrent.CompletableFuture.waitingGet(CompletableFuture.java:1898)
+                               : java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2072)
+                               : com.udtrucks.adaptor.services.QueueService.pollFromQueues(QueueService.java:58)
+                               : com.udtrucks.adaptor.AdaptorInboundApplication.startProcess(AdaptorInboundApplication.java:77)
+                               : jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:-2)
+                               : jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+                               : jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                               : java.lang.reflect.Method.invoke(Method.java:568)
+                               : org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389)
+                               : org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333)
+                               : org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157)
+                               : org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440)
+                               : org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+                               : org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+                               : org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+                               : org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+                               : org.springframework.beans.factory.support.AbstractBeanFactory$$Lambda$258/0x0000000800dac8e8.getObject(null:-1)
+                               : org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+                               : org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+                               : org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+                               : org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+                               : org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+                               : org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+                               : org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+                               : org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+                               : org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+                               : org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+                               : org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+                               : org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+                               : com.udtrucks.adaptor.AdaptorInboundApplication.main(AdaptorInboundApplication.java:64)
+
+                          Name : Notification Thread
+                      Priority : 9
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 15
+                         State : RUNNABLE
+
+                          Name : Attach Listener
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 5
+                         State : RUNNABLE
+
+                          Name : Monitor Ctrl-Break
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 14
+                         State : RUNNABLE
+                         Stack : sun.nio.ch.SocketDispatcher.read0(SocketDispatcher.java:-2)
+                               : sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+                               : sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:261)
+                               : sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:312)
+                               : sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+                               : sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+                               : java.net.Socket$SocketInputStream.read(Socket.java:966)
+                               : sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+                               : sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+                               : sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+                               : java.io.InputStreamReader.read(InputStreamReader.java:177)
+                               : java.io.BufferedReader.fill(BufferedReader.java:162)
+                               : java.io.BufferedReader.readLine(BufferedReader.java:329)
+                               : java.io.BufferedReader.readLine(BufferedReader.java:396)
+                               : com.intellij.rt.execution.application.AppMainV2$1.run(AppMainV2.java:56)
+
+                          Name : Finalizer
+                      Priority : 8
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 3
+                         State : WAITING
+                         Stack : java.lang.Object.wait(Object.java:-2)
+                               : java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+                               : java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:176)
+                               : java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:172)
+
+                          Name : Catalina-utility-2
+                      Priority : 1
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 21
+                         State : TIMED_WAITING
+                         Stack : jdk.internal.misc.Unsafe.park(Unsafe.java:-2)
+                               : java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+                               : java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+                               : java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+                               : java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+                               : java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+                               : java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+                               : org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+                               : java.lang.Thread.run(Thread.java:833)
+
+                          Name : Signal Dispatcher
+                      Priority : 9
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 4
+                         State : RUNNABLE
+
+                          Name : container-0
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 22
+                         State : TIMED_WAITING
+                         Stack : java.lang.Thread.sleep(Thread.java:-2)
+                               : org.apache.catalina.core.StandardServer.await(StandardServer.java:563)
+                               : org.springframework.boot.web.embedded.tomcat.TomcatWebServer$1.run(TomcatWebServer.java:197)
+
+                          Name : JMSCCThreadPoolMaster
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 27
+                         State : WAITING
+                         Stack : java.lang.Object.wait(Object.java:-2)
+                               : java.lang.Object.wait(Object.java:338)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.waitForNotification(WorkQueueManagerImplementation.java:672)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.waitForNotification(WorkQueueManagerImplementation.java:641)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.run(WorkQueueManagerImplementation.java:908)
+
+First Failure Symptom Report completed at Thu Sep 21 16:19:28 IST 2023
+------------------------------------END FFST------------------------------------

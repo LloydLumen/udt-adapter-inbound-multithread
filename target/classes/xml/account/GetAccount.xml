@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><md:SyncAccount serviceID="String" serviceVersion="String" xmlns:volvo="http://www.volvo.com/group/common/1_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:md="http://www.cdb.volvo.com/masterdata/4_0">
+<volvo:ApplicationArea>
+<volvo:Sender>
+<volvo:LogicalID>MDM_API_User</volvo:LogicalID>
+</volvo:Sender>
+<volvo:CreationDateTime>2022-11-30T06:32:43</volvo:CreationDateTime>
+<volvo:BODID>CF017964-8BA7-41B0-BC8C-6C8B73251CF8</volvo:BODID>
+</volvo:ApplicationArea>
+</md:SyncAccount><md:DataArea xmlns:volvo="http://www.volvo.com/group/common/1_0" xmlns:md="http://www.cdb.volvo.com/masterdata/4_0">
+<md:Sync>
+<volvo:ActionCriteria>SyncAccount</volvo:ActionCriteria>
+</md:Sync>
+<md:Accounts>
+<md:Account>
+<md:PartyID>123</md:PartyID>
+<md:PublicInformation>
+<md:LegalName>ABC Enterprise TEST</md:LegalName>
+<md:CommonName>ABC Enterprise TEST</md:CommonName>
+<md:GlobalID>
+<md:ChamberOfCommerce>hjvkj</md:ChamberOfCommerce>
+<md:OrganisationNumber>hjvkj</md:OrganisationNumber>
+<md:VATNumber>hjvkj</md:VATNumber>
+</md:GlobalID>
+<md:Location/>
+<md:Communication>
+<md:Phone>
+<md:InternationalPrefix>91</md:InternationalPrefix>
+<md:AreaPrefix/>
+<md:Number>54345345</md:Number>
+<md:Extension/>
+</md:Phone>
+<md:Fax>
+<md:InternationalPrefix>91</md:InternationalPrefix>
+<md:AreaPrefix/>
+<md:Number>54345345</md:Number>
+<md:Extension/>
+</md:Fax>
+<md:Email>abc@gmail.com</md:Email>
+<md:WebSite>www.url.com</md:WebSite>
+</md:Communication>
+</md:PublicInformation>
+<md:ParmaNumber>1234567</md:ParmaNumber>
+</md:Account>
+</md:Accounts>
+</md:DataArea>

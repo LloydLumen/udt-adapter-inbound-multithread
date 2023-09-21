@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><root xmlns:volvo="http://www.udtrucks.com/group/common/1_0" xmlns:md="http://www.udtrucks.com/Customer/5_0">
+<X_UDT_name/>
+<X_UDT_partyID>3121548970</X_UDT_partyID>
+<X_UDT_parmaID/>
+<X_UDT_customerType>
+<Code>C</Code>
+</X_UDT_customerType>
+<X_UDT_Identifier id="3121548970">
+<X_UDT_identifierType>
+<Code>COC</Code>
+</X_UDT_identifierType>
+<X_UDT_identifierValue/>
+</X_UDT_Identifier>
+<X_UDT_Identifier id="3121548970">
+<X_UDT_identifierType>
+<Code>ON</Code>
+</X_UDT_identifierType>
+<X_UDT_identifierValue/>
+</X_UDT_Identifier>
+<X_UDT_Identifier id="3121548970">
+<X_UDT_identifierType>
+<Code>VAT</Code>
+</X_UDT_identifierType>
+<X_UDT_identifierValue/>
+</X_UDT_Identifier>
+<X_UDT_AlternateName id="3121548970">
+<X_UDT_nameType>
+<code>L</code>
+</X_UDT_nameType>
+<X_UDT_alternateName/>
+</X_UDT_AlternateName>
+</root>

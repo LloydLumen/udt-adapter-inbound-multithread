@@ -93,7 +93,7 @@ public class QueueWorkflowService {
             cf.setChannel(mq_channel);
             cf.setTransportType(WMQConstants.WMQ_CM_CLIENT);
             cf.setBooleanProperty(WMQConstants.USER_AUTHENTICATION_MQCSP, true);
-            cf.setSSLCipherSuite(mq_ssl_ciphersuite);
+//            cf.setSSLCipherSuite(mq_ssl_ciphersuite);
 
             conn = cf.createConnection(mq_username, new String(PasswordUtils.decodePassword(mq_password)));
             LOGGER.info("created connection to MQ " + conn);

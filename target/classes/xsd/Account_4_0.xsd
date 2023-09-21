@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:volvo="http://www.volvo.com/group/common/1_0" xmlns:md="http://www.cdb.volvo.com/masterdata/4_0" targetNamespace="http://www.cdb.volvo.com/masterdata/4_0" elementFormDefault="qualified" attributeFormDefault="qualified" version="4.0">
+	<xsd:import namespace="http://www.volvo.com/group/common/1_0" schemaLocation="../commons/VolvoCommon_1_0.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation>### Interface Schemas ###</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="ProcessAccount">
+		<xsd:annotation>
+			<xsd:documentation>Process Account Request Schema.</xsd:documentation>
+			<xsd:documentation>Should Put Blow Intrinsic Values into ActionCriteria Property</xsd:documentation>
+			<xsd:documentation>CreateAccount: on create account</xsd:documentation>
+			<xsd:documentation>UpdateAccount: on update account</xsd:documentation>
+			<xsd:documentation>ConnectAccount: on connect account</xsd:documentation>
+			<xsd:documentation>ChangeBrandRelation: on change brand relation</xsd:documentation>
+			<xsd:documentation>DisconnectAccount: on disconnect account</xsd:documentation>
+			<xsd:documentation>AddAssignedMaintainer: on add assigned maintainer</xsd:documentation>
+			<xsd:documentation>DeleteAssignedMaintainer: on delete assigned maintainer</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:ProcessActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AcknowledgeAccount">
+		<xsd:annotation>
+			<xsd:documentation>Process Account Reply Schema.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:AcknowledgeActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ProcessMarkCustomer">
+		<xsd:annotation>
+			<xsd:documentation>Mark Customer Request Schema.</xsd:documentation>
+			<xsd:documentation>Should Put Blow Intrinsic Values into ActionCriteria Property</xsd:documentation>
+			<xsd:documentation>MarkCustomer</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:ProcessActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AcknowledgeMarkCustomer">
+		<xsd:annotation>
+			<xsd:documentation>Mark Customer Reply Schema.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:AcknowledgeActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AcknowledgeMaintainer">
+		<xsd:annotation>
+			<xsd:documentation>Process Maintainer Reply Schema.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:AcknowledgeActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="GetAccount">
+		<xsd:annotation>
+			<xsd:documentation>Get Account Request Schema.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:GetActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ShowAccount">
+		<xsd:annotation>
+			<xsd:documentation>Get Account Reply Schema</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:ShowAccountActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SyncAccount">
+		<xsd:annotation>
+			<xsd:documentation>Sync Account Message Schema.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:SyncActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SyncMaintainer">
+		<xsd:annotation>
+			<xsd:documentation>Sync Ownership Message Schema.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:SyncActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="GetCustomer">
+		<xsd:annotation>
+			<xsd:documentation>Get Customer Request Schema.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:GetActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ShowCustomer">
+		<xsd:annotation>
+			<xsd:documentation>Get Account Reply Schema</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:ShowCustomerActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SyncCustomer">
+		<xsd:annotation>
+			<xsd:documentation>Sync Customer Message Schema.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="md:SyncCustomerActionType"/>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:annotation>
+		<xsd:documentation>### Verb Aciont Types ###</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType name="ProcessActionType">
+		<xsd:complexContent>
+			<xsd:extension base="volvo:BODType">
+				<xsd:sequence>
+					<xsd:element name="DataArea">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Process" type="volvo:ProcessType"/>
+								<xsd:element name="Context" type="md:DataContextType"/>
+								<xsd:element name="Accounts">
+									<xsd:complexType>
+										<xsd:choice minOccurs="1" maxOccurs="unbounded">
+											<xsd:element name="Account" type="md:AccountType"/>
+										</xsd:choice>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AcknowledgeActionType">
+		<xsd:complexContent>
+			<xsd:extension base="volvo:BODType">
+				<xsd:sequence>
+					<xsd:element name="DataArea">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Acknowledge" type="volvo:AcknowledgeType"/>
+								<xsd:element name="Context" type="md:DataContextType" minOccurs="0"/>
+								<xsd:element name="Accounts" minOccurs="0">
+									<xsd:complexType>
+										<xsd:choice minOccurs="0" maxOccurs="unbounded">
+											<xsd:element name="Account" type="md:AccountType"/>
+										</xsd:choice>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="GetActionType">
+		<xsd:complexContent>
+			<xsd:extension base="volvo:BODType">
+				<xsd:sequence>
+					<xsd:element name="DataArea">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Get" type="volvo:GetType">
+									<xsd:annotation>
+										<xsd:documentation>The "ActionCriteria" element should apply its value in below list.</xsd:documentation>										
+										<xsd:documentation>GetAccount</xsd:documentation>
+										<xsd:documentation>GetCustomer</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="Context" type="md:DataContextType"/>
+								<xsd:element name="Criteria" type="md:SearchCriteriaType"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ShowAccountActionType">
+		<xsd:complexContent>
+			<xsd:extension base="volvo:BODType">
+				<xsd:sequence>
+					<xsd:element name="DataArea">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Show" type="volvo:ShowType"/>
+								<xsd:element name="Accounts" minOccurs="0">
+									<xsd:complexType>
+										<xsd:choice minOccurs="0" maxOccurs="unbounded">
+											<xsd:element name="Account" type="md:AccountType"/>
+										</xsd:choice>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ShowCustomerActionType">
+		<xsd:complexContent>
+			<xsd:extension base="volvo:BODType">
+				<xsd:sequence>
+					<xsd:element name="DataArea">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Show" type="volvo:ShowType"/>
+								<xsd:element name="Customers" minOccurs="0">
+									<xsd:complexType>
+										<xsd:choice minOccurs="0" maxOccurs="unbounded">
+											<xsd:element name="Customer" type="md:AccountType"/>
+										</xsd:choice>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SyncActionType">
+		<xsd:complexContent>
+			<xsd:extension base="volvo:BODType">
+				<xsd:sequence>
+					<xsd:element name="DataArea">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Sync" type="volvo:SyncType">
+									<xsd:annotation>
+										<xsd:documentation>The "ActionCriteria" element should apply its value in below list.</xsd:documentation>
+										<xsd:documentation>SyncAccount</xsd:documentation>
+										<xsd:documentation>SyncRURelation</xsd:documentation>
+										<xsd:documentation>SyncMaintainer</xsd:documentation>
+										<xsd:documentation>SyncMergeHistory</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="Accounts">
+									<xsd:complexType>
+										<xsd:choice minOccurs="0" maxOccurs="unbounded">
+											<xsd:element name="Account" type="md:AccountType"/>
+										</xsd:choice>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SyncCustomerActionType">
+		<xsd:complexContent>
+			<xsd:extension base="volvo:BODType">
+				<xsd:sequence>
+					<xsd:element name="DataArea">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Sync" type="volvo:SyncType">
+									<xsd:annotation>
+										<xsd:documentation>The "ActionCriteria" element should be SyncCustomer.</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="Customers">
+									<xsd:complexType>
+										<xsd:choice minOccurs="0" maxOccurs="unbounded">
+											<xsd:element name="Customer" type="md:AccountType"/>
+										</xsd:choice>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:annotation>
+		<xsd:documentation>### Simple Types ###</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType name="PartyIDType">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="10"/>
+			<xsd:pattern value="[0-9]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CommonNameType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="80"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NameType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="120"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VATNumberType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ChamberOfCommerceType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganisationNumberType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ParmaNumberType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressLineType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StreetAddressType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="180"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PostalCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PostalCodeExtensionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CityType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StateProvinceType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CountyType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TimeZoneType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value=""/>
+			<xsd:enumeration value="GMT-12"/>
+			<xsd:enumeration value="GMT-11"/>
+			<xsd:enumeration value="GMT-10"/>
+			<xsd:enumeration value="GMT-9"/>
+			<xsd:enumeration value="GMT-8"/>
+			<xsd:enumeration value="GMT-7"/>
+			<xsd:enumeration value="GMT-6"/>
+			<xsd:enumeration value="GMT-5"/>
+			<xsd:enumeration value="GMT-4"/>
+			<xsd:enumeration value="GMT-3.5"/>
+			<xsd:enumeration value="GMT-3"/>
+			<xsd:enumeration value="GMT-2"/>
+			<xsd:enumeration value="GMT-1"/>
+			<xsd:enumeration value="GMT+0"/>
+			<xsd:enumeration value="GMT+1"/>
+			<xsd:enumeration value="GMT+2"/>
+			<xsd:enumeration value="GMT+3"/>
+			<xsd:enumeration value="GMT+3.5"/>
+			<xsd:enumeration value="GMT+4"/>
+			<xsd:enumeration value="GMT+4.5"/>
+			<xsd:enumeration value="GMT+5"/>
+			<xsd:enumeration value="GMT+5.5"/>
+			<xsd:enumeration value="GMT+6"/>
+			<xsd:enumeration value="GMT+7"/>
+			<xsd:enumeration value="GMT+8"/>
+			<xsd:enumeration value="GMT+9"/>
+			<xsd:enumeration value="GMT+9.5"/>
+			<xsd:enumeration value="GMT+10"/>
+			<xsd:enumeration value="GMT+11"/>
+			<xsd:enumeration value="GMT+12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PhoneGenericType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CommunicationValueType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="80"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="GeographicValueType">
+		<xsd:restriction base="xsd:float"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ApplicationIDType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ApplicationNameType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ExternalIDType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CTDICodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DescriptionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ProcessTokenType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RelatedAccountRoleType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganisationalClassificationCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="OrganisationalClassificationDescriptionType">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:annotation>
+		<xsd:documentation>### Complex Types ###</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType name="KnownAsType">
+		<xsd:sequence>
+			<xsd:element name="Application" type="md:ApplicationType" minOccurs="1"/>
+			<xsd:element name="ExternalID" type="md:ExternalIDType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ApplicationType">
+		<xsd:sequence>
+			<xsd:element name="ID" type="md:ApplicationIDType" minOccurs="1"/>
+			<xsd:element name="Name" type="md:ApplicationNameType" minOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BrandType">
+		<xsd:sequence>
+			<xsd:element name="Code" type="md:CTDICodeType" minOccurs="1"/>
+			<xsd:element name="Description" type="md:DescriptionType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BusinessAreaType">
+		<xsd:sequence>
+			<xsd:element name="Code" type="md:CTDICodeType" minOccurs="1"/>
+			<xsd:element name="Description" type="md:DescriptionType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BABrandType">
+		<xsd:sequence>
+			<xsd:element name="BA" type="md:BusinessAreaType" minOccurs="1"/>
+			<xsd:element name="Brand" type="md:BrandType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AddressType">
+		<xsd:sequence>
+			<xsd:element name="Line1" type="md:AddressLineType" minOccurs="1"/>
+			<xsd:element name="Line2" type="md:AddressLineType" minOccurs="0"/>
+			<xsd:element name="Line3" type="md:AddressLineType" minOccurs="0"/>
+			<xsd:element name="PostalCode" type="md:PostalCodeType" minOccurs="0"/>
+			<xsd:element name="PostalCodeExtension" type="md:PostalCodeExtensionType" minOccurs="0"/>
+			<xsd:element name="City" type="md:CityType" minOccurs="0"/>
+			<xsd:element name="StateProvince" type="md:StateProvinceType" minOccurs="0"/>
+			<xsd:element name="County" type="md:CountyType" minOccurs="0"/>
+			<xsd:element name="CountryCode" type="volvo:CountryType" minOccurs="1"/>
+			<xsd:element name="TimeZone" type="md:TimeZoneType" minOccurs="0"/>
+			<xsd:element name="Longitude" type="md:GeographicValueType" minOccurs="0"/>
+			<xsd:element name="Latitude" type="md:GeographicValueType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PhoneType">
+		<xsd:sequence>
+			<xsd:element name="InternationalPrefix" type="md:PhoneGenericType" minOccurs="0"/>
+			<xsd:element name="AreaPrefix" type="md:PhoneGenericType" minOccurs="0"/>
+			<xsd:element name="Number" type="md:CommunicationValueType" minOccurs="0"/>
+			<xsd:element name="Extension" type="md:PhoneGenericType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ResponsibleUnitType">
+		<xsd:sequence>
+			<xsd:element name="PartyID" type="md:PartyIDType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DataContextType">
+		<xsd:annotation>
+			<xsd:documentation>message context for process request</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ResponsibleUnit" type="md:ResponsibleUnitType" minOccurs="0"/>
+			<xsd:element name="BABrands" minOccurs="0">
+				<xsd:complexType>
+					<xsd:choice minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="BABrand" type="md:BABrandType" minOccurs="0"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ProcessToken" type="md:ProcessTokenType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PublicInformationType">
+		<xsd:sequence>
+			<xsd:element name="LegalName" type="md:NameType" minOccurs="0"/>
+			<xsd:element name="CommonName" type="md:CommonNameType" minOccurs="0"/>
+			<xsd:element name="GlobalID" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="VATNumber" type="md:VATNumberType" minOccurs="0"/>
+						<xsd:element name="ChamberOfCommerce" type="md:ChamberOfCommerceType" minOccurs="0"/>
+						<xsd:element name="OrganisationNumber" type="md:OrganisationNumberType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Location" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="MainAddress" type="md:AddressType" minOccurs="0"/>
+						<xsd:element name="VisitAddress" type="md:AddressType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Communication" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Phone" type="md:PhoneType" minOccurs="0"/>
+						<xsd:element name="Fax" type="md:PhoneType" minOccurs="0"/>
+						<xsd:element name="WebSite" type="md:CommunicationValueType" minOccurs="0"/>
+						<xsd:element name="Email" type="md:CommunicationValueType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AccountStructureType">
+		<xsd:sequence>
+			<xsd:element name="Role" type="md:RelatedAccountRoleType"/>
+			<xsd:element name="PartyID" type="md:PartyIDType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SearchCriteriaType">
+		<xsd:sequence>
+			<xsd:element name="PartyID" type="md:PartyIDType" minOccurs="0"/>
+			<xsd:element name="LegalName" type="md:NameType" minOccurs="0"/>
+			<xsd:element name="CommonName" type="md:CommonNameType" minOccurs="0"/>
+			<xsd:element name="VATNumber" type="md:VATNumberType" minOccurs="0"/>
+			<xsd:element name="ChamberOfCommerce" type="md:ChamberOfCommerceType" minOccurs="0"/>
+			<xsd:element name="OrganisationNumber" type="md:OrganisationNumberType" minOccurs="0"/>
+			<xsd:element name="ParmaNumber" type="md:ParmaNumberType" minOccurs="0"/>
+			<xsd:element name="PostalCode" type="md:PostalCodeType" minOccurs="0"/>
+			<xsd:element name="PostalCodeExtension" type="md:PostalCodeExtensionType" minOccurs="0"/>
+			<xsd:element name="CountryCode" type="volvo:CountryType" minOccurs="0"/>
+			<xsd:element name="StateProvince" type="md:StateProvinceType" minOccurs="0"/>
+			<xsd:element name="County" type="md:CountyType" minOccurs="0"/>
+			<xsd:element name="City" type="md:CityType" minOccurs="0"/>
+			<xsd:element name="StreetAddress" type="md:StreetAddressType" minOccurs="0"/>
+			<xsd:element name="TimeZone" type="md:TimeZoneType" minOccurs="0"/>
+			<xsd:element name="Longitude" type="md:GeographicValueType" minOccurs="0"/>
+			<xsd:element name="Latitude" type="md:GeographicValueType" minOccurs="0"/>
+			<xsd:element name="Phone" type="md:CommunicationValueType" minOccurs="0"/>
+			<xsd:element name="Fax" type="md:CommunicationValueType" minOccurs="0"/>
+			<xsd:element name="WebSite" type="md:CommunicationValueType" minOccurs="0"/>
+			<xsd:element name="Email" type="md:CommunicationValueType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MergeeType">
+		<xsd:sequence>
+			<xsd:element name="PartyID" type="md:PartyIDType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ResponsibleUnitRelationshipType">
+		<xsd:sequence>
+			<xsd:element name="BABrand" type="md:BABrandType" minOccurs="0"/>
+			<xsd:element name="ResponsibleUnits" minOccurs="0">
+				<xsd:complexType>
+					<xsd:choice minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="ResponsibleUnit" type="md:ResponsibleUnitType"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OrganisationalClassificationType">
+		<xsd:sequence>
+			<xsd:element name="Class">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Code" type="md:OrganisationalClassificationCodeType"/>
+						<xsd:element name="Description" type="md:OrganisationalClassificationDescriptionType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SubClass" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Code" type="md:OrganisationalClassificationCodeType"/>
+						<xsd:element name="Description" type="md:OrganisationalClassificationDescriptionType" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MaintainersType">
+		<xsd:sequence>
+			<xsd:element name="MainMaintainers" minOccurs="0">
+				<xsd:complexType>
+					<xsd:choice minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="MainMaintainer" minOccurs="0">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="PartyID" type="md:PartyIDType"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AssignedMaintainers" minOccurs="0">
+				<xsd:complexType>
+					<xsd:choice minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="AssignedMaintainer">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="PartyID" type="md:PartyIDType"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AccountType">
+		<xsd:sequence>
+			<xsd:element name="PartyID" type="md:PartyIDType" minOccurs="0"/>
+			<xsd:element name="PublicInformation" type="md:PublicInformationType" minOccurs="0"/>
+			<xsd:element name="KnownAs" type="md:KnownAsType" minOccurs="0"/>
+			<xsd:element name="ParmaNumber" type="md:ParmaNumberType" minOccurs="0"/>
+			<xsd:element name="AccountStructures" minOccurs="0">
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:element name="AccountStructure" type="md:AccountStructureType"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="OrganisationalClassifications" minOccurs="0">
+				<xsd:complexType>
+					<xsd:choice minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="OrganisationalClassification" type="md:OrganisationalClassificationType"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ResponsibleUnitRelationships" minOccurs="0">
+				<xsd:complexType>
+					<xsd:choice minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="ResponsibleUnitRelationship" type="md:ResponsibleUnitRelationshipType"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CustomerTo" minOccurs="0">
+				<xsd:complexType>
+					<xsd:choice minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="BABrand" type="md:BABrandType"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="MergeHistory" minOccurs="0">
+				<xsd:complexType>
+					<xsd:choice minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="Mergee" type="md:MergeeType"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Maintainers" type="md:MaintainersType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

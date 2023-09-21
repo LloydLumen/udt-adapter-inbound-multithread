@@ -59,8 +59,8 @@ public class QueueService {
             List<String> resultOrganizationList = organizationMessagesF.get();
             List<String> resultVehicleList = vehicleMessagesF.get();
             allMessages.addAll(resultCustomerList);
-            allMessages.addAll(resultOrganizationList);
-            allMessages.addAll(resultVehicleList);
+//            allMessages.addAll(resultOrganizationList);
+//            allMessages.addAll(resultVehicleList);
         } catch (InterruptedException | ExecutionException e) {
             LOGGER.error("Exception in inbound adapter application because: {}", e.getMessage());
         }
